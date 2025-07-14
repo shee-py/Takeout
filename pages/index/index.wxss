@@ -60,3 +60,112 @@ page {
 .nickname-input {
   flex: 1;
 }
+
+.container{
+    padding: 0;
+  }
+/* -----------------header------------------ */
+.header{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+}
+/* 美团拼好饭 gps定位 */
+.title-location-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+.location{
+    font-size: 14px;
+    color:black;
+}
+/* 10元点外卖0配送费 超百万用户真实评价 */
+.text{
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+.text text{
+    font-size: 10px;
+    color: gray;
+}
+/* 搜索框 */
+.search-box{
+    border-radius: 80rpx;
+    padding: 10rpx 40rpx ;
+    box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+.search-input{
+    flex: 1;
+    height: 60rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+/* -----------------header------------------ */
+
+/* -----------------neck------------------- */
+.neck{
+    width: 100%;
+  }
+/* neck-title 爆品一口价6.9元吃大餐*/
+.neck-title-nav{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 20rpx;
+    box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+.neck-title-big{
+    font-size: 20px;
+    margin-left: 5rpx;
+}
+.neck-title-small{
+    font-size: 12px;
+    padding-top: 4px;
+}
+.more{
+    font-size: 25rpx;
+    color: grey;
+    padding-left: 40%;
+}
+/*  */
+.goods-list {
+
+}
+
+.goods-item {
+
+}
+  
+.goods-img {
+}
+  
+.shop-name {
+
+}
+  
+.goods-name {
+
+}
+  
+.subsidy {
+
+}
+  
+.price-area {
+
+}
+
+  .current-price {
+}

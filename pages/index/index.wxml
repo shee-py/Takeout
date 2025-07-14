@@ -1,4 +1,43 @@
 <!--index.wxml-->
-<view>
-<button>登录</button>
+<!-- 主容器 -->
+<view class="container">
+    <!-- 导航栏 -->
+    <view class="header">
+        <view class="title-location-row"> 
+            <!-- 标题 -->
+            <text class="title">美团拼好饭</text>
+            <!-- 地址定位 -->
+            <text class="location">华农</text>
+        </view>
+        <!-- 10元点外卖 0配送费 -->
+        <view class="text">
+            <text>10元点外卖 0配送费</text>
+            <text>超百万用户真实评价</text>
+        </view>
+        <!-- 搜索栏 -->
+        <view class="search-box">
+            <input type="text" class="search-input" placeholder="请输入商家或商品名称" bindinput="onSearchInput"/>
+        </view>
+    </view>
+<!-- 爆品一口价 6.9元吃大餐 -->
+    <view class="neck" style="height: 128rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -1106rpx; width: 712rpx">
+        <!-- 标题 -->
+        <view class="neck-title-nav">
+        <text class="neck-title-big">爆品一口价</text>
+        <text class="neck-title-small">6.9元吃大牌</text>
+        <navigator url="" class="more">更多></navigator>
+        </view>
+        <!-- 图片价格点餐区 -->
+        <view class="goods-list">
+            <view class="goods-item" wx:for="{{}}" wx:key="index">
+                <image class="goods-img" src="" mode="aspectFill"></image>
+                <view class="shop-name">{{item.shopName}}</view>
+                <view class="goods-name">{{item.name}}</view>
+                <view class="subsidy">{{item.subsidy}}</view>
+                <view class="price-area">
+                    <text class="current-price">¥一口价 {{item.currentPrice}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>
