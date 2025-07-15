@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <!-- 主容器 -->
 <view class="container">
-    <!-- 导航栏 -->
-    <view class="header">
+<!---------------------------------- 导航栏 ---------------------------------------------->
+    <view class="header" style="position: relative; left: 0rpx; top: -20rpx">
         <view class="title-location-row"> 
             <!-- 标题 -->
             <text class="title">美团拼好饭</text>
@@ -19,8 +19,8 @@
             <input type="text" class="search-input" placeholder="请输入商家或商品名称" bindinput="onSearchInput"/>
         </view>
     </view>
-<!-- 爆品一口价 6.9元吃大餐 -->
-    <view class="neck" style="height: 128rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -1106rpx; width: 712rpx">
+<!----------------------------------- 爆品一口价 6.9元吃大餐 ------------------------------------->
+    <view class="neck" > <!-- style="height: 128px; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -1106rpx; width: 712rpx"-->
         <!-- 标题 -->
         <view class="neck-title-nav">
         <text class="neck-title-big">爆品一口价</text>
@@ -29,7 +29,7 @@
         </view>
         <!-- 图片价格点餐区 -->
         <view class="goods-list">
-            <view class="goods-item" wx:for="{{}}" wx:key="index">
+            <view class="goods-item" wx:for="{{goods-list}}" wx:key="index">
                 <image class="goods-img" src="" mode="aspectFill"></image>
                 <view class="shop-name">{{item.shopName}}</view>
                 <view class="goods-name">{{item.name}}</view>
@@ -40,4 +40,38 @@
             </view>
         </view>
     </view>
+<!--------------------------------- 分类导航 -------------------------------------->
+    <view class="nav-tag">
+        <view class="nav-container">
+            <view class="nav-item" wx:for="{{navList}}" wx:key="index">
+                <image class='nav-icon' src="" mode="aspectFill"></image>
+                <text class="nav-text"></text>
+            </view>
+            <view class="tag-container">
+                <text class="tag-item" wx:for="{{tagList}}" wx:key="index"></text>
+            </view>
+        </view>
+    </view>
+<!-------------------------------- 拼单区域 ------------------------------------>
+    <view class="group-buy-list">
+        <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
+            <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></image>
+            <view class="shop-info">
+                <view class="shop-name">{{item.shopName}}</view>
+                <view class="distance-time">{{item.distance}}{{item.time}}</view>
+            </view>
+            <view class="product-list">
+                <view class="product-item" wx:for="{{item.products}}" wx:key="prodIndex">
+                    <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>
+                    <view class="product-name">{{prodItem.name}}</view>
+                    <view class="product-price">¥{{prodItem.price}}</view>
+                    <view class="sold-info">{{prodItem.soldInfo}}</view>
+                </view>
+            </view>
+            <view class="join-btn" wx:if="{{!item.isEnd}}">参与拼单</view>
+            <view class="end-tag" wx:else>已结束</view>
+        </view>
+    </view>
+<!---------------------------------- 玉足区域 ------------------------->
+    
 </view>

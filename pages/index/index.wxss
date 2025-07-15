@@ -63,14 +63,54 @@ page {
 
 .container{
     padding: 0;
-  }
-/* -----------------header------------------ */
+}
+/* _________________________________________________________________________________________________________*/
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px 0 10px;
+}
+
 .header{
     display: flex;
     flex-direction: column;
     padding: 10px;
     width: 100%;
+    background-color: green;
 }
+
+.neck{
+    background-color: grey;
+    position: relative;
+    top: -49px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    height: 160px;    
+    box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
+    /* border-radius: 20rpx; */
+}
+
+.nav-tag{
+    width: 750rpx;
+    height: 110px;
+    position: relative;
+    top: -89px;
+    background-color: purple;
+}
+
+.group-buy-list {
+    margin-top: 20rpx;
+    position: relative;
+    width: 750rpx;
+    height: 189px;
+    top: -138px;
+    background-color: red;
+}
+/* ----------------------------header--------------------------------------------------- */
+
 /* 美团拼好饭 gps定位 */
 .title-location-row{
     display: flex;
@@ -106,66 +146,196 @@ page {
     box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
 }
 .search-input{
-    flex: 1;
     height: 60rpx;
     font-size: 28rpx;
-    color: #333;
+    color: grey;
 }
-/* -----------------header------------------ */
+/* -----------------header------------------------------------------------- */
 
-/* -----------------neck------------------- */
-.neck{
-    width: 100%;
-  }
-/* neck-title 爆品一口价6.9元吃大餐*/
+/* -----------------neck---------------------------------------------------- */
+
+/* neck-title-nav 爆品一口价6.9元吃大餐*/
 .neck-title-nav{
-    height: 200px;
     display: flex;
     align-items: center;
     gap: 4px;
-    border-radius: 20rpx;
-    box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
 }
 .neck-title-big{
-    font-size: 20px;
+    font-size: 34rpx;
+    font-weight: bold;
     margin-left: 5rpx;
 }
 .neck-title-small{
-    font-size: 12px;
+    font-size: 11px;
     padding-top: 4px;
 }
 .more{
     font-size: 25rpx;
     color: grey;
-    padding-left: 40%;
+    padding-left: 43%;
 }
-/*  */
-.goods-list {
+/* gooos-list-itemimg-shop-name-subsidy-pricearea-currentprice */
+.goods-list{
 
 }
 
-.goods-item {
+.goods-item{
 
 }
   
-.goods-img {
+.goods-img{
+}
+  
+.shop-name{
+
+}
+  
+.goods-name{
+
+}
+  
+.subsidy{
+
+}
+  
+.price-area{
+
+}
+
+.current-price{
+}
+
+/* ----------------ncek---------------------------------------------------------------------------------- */
+
+/* --------------------navigator------------------------------------------------------------------------- */
+
+/* 分类导航样式 */
+.goods-kind-nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.goods-kind-nav::-webkit-scrollbar{
+    display: none;
+}
+/* -----nav----- */
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 20%;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+.nav-text {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* -----tag----- */
+
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding: 0 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+.tag-container::-webkit-scrollbar{
+    display: none;
+}
+.tag-item {
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* -------------------------------------navigator---------------------------------------------------- */
+
+  
+.group-buy-item {
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 15rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+  
+.group-buy-img {
+    width: 200rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+    float: left;
+    margin-right: 20rpx;
+}
+  
+.shop-info {
+    margin-bottom: 10rpx;
 }
   
 .shop-name {
-
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
 }
   
-.goods-name {
-
+.distance-time {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 5rpx;
 }
   
-.subsidy {
-
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
 }
   
-.price-area {
-
+.product-item {
+    width: 30%;
+    margin-right: 5%;
+    margin-bottom: 10rpx;
 }
-
-  .current-price {
+  
+.product-img {
+    width: 100%;
+    height: 100px;
+    border-radius: 10rpx;
+}
+  
+.product-name {
+    font-size: 26rpx;
+    color: black;
+    margin-top: 5rpx;
+}
+  
+.product-price {
+    font-size: 26rpx;
+    color: red;
+    margin-top: 5rpx;
+}
+  
+.sold-info {
+    font-size: 24rpx;
+    color: grey;
+    margin-top: 5rpx;
 }
