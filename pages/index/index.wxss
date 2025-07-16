@@ -281,25 +281,38 @@ page {
 
 /* -------------------------------------navigator---------------------------------------------------- */
 
-  
+/* --------------------------------------导航分类区下面拼单即成----------------------------- */
 .group-buy-item {
     background-color: #fff;
+    
     border-radius: 10rpx;
     padding: 15rpx;
-    margin-bottom: 20rpx;
     box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+    clip-path: polygon(
+        0 0,
+        90% 0,
+        90% 100%,
+        0 100%
+    );
+}
+
+.group-buy-item-head{
+    
 }
   
 .group-buy-img {
-    width: 200rpx;
-    height: 150rpx;
+    width: 50rpx;
+    height: 37.5rpx;
     border-radius: 10rpx;
     float: left;
     margin-right: 20rpx;
+    padding-top: 2px;
 }
   
 .shop-info {
-    margin-bottom: 10rpx;
+    margin-bottom: 17px;
+    display: flex;
+    gap: 135px;
 }
   
 .shop-name {
@@ -337,14 +350,18 @@ page {
     margin-top: 5rpx;
 }
   
+.product-price-sold{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 .product-price {
     font-size: 26rpx;
     color: red;
-    margin-top: 5rpx;
 }
   
 .sold-info {
     font-size: 24rpx;
     color: grey;
-    margin-top: 5rpx;
 }
