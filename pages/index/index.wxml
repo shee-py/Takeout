@@ -7,7 +7,10 @@
             <!-- 标题 -->
             <text class="title">美团拼好饭</text>
             <!-- 地址定位 -->
-            <text class="location">华农</text>
+            <view class="location" bindtap="getLocation">
+                <image src="/images/Repositioning (重新定位).png" class="location-icon"></image>
+                <text>{{location ? (location.address || '已定位') : '未定位'}}</text>
+            </view>
         </view>
         <!-- 10元点外卖 0配送费 -->
         <view class="text">

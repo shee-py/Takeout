@@ -1,0 +1,108 @@
+/* pages/user/user.wxss */
+page {
+    background-color: #f4f4f4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.container {
+    padding: 20rpx;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    padding: 40rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.avatar-wrapper {
+    width: 160rpx;
+    height: 300rpx;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    border: 4rpx solid #eee;
+    box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* 确保圆形裁剪 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+    /* 完整显示头像，不裁剪 */
+    object-position: center;
+    /* 居中显示 */
+}
+
+.tips {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 10rpx;
+    margin-bottom: 40rpx;
+}
+
+.nickname-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20rpx 0;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.label {
+    font-size: 32rpx;
+    color: #333;
+    margin-right: 30rpx;
+}
+
+.nickname-input {
+    flex: 1;
+    font-size: 32rpx;
+    text-align: right;
+    color: #555;
+}
+
+.menu-list {
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.arrow {
+    font-size: 28rpx;
+    color: #ccc;
+}
+
+.save-btn {
+    width: 100%;
+    margin-top: 50rpx;
+    background-color: #07c160;
+    color: white;
+    font-size: 32rpx;
+    font-weight: bold;
+    border-radius: 50rpx;
+}

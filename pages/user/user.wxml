@@ -1,0 +1,35 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="profile-card">
+    <!-- 头像 -->
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    </button>
+    <view class="tips">点击头像可修改</view>
+
+    <!-- 昵称 -->
+    <view class="nickname-section">
+      <text class="label">昵称</text>
+      <input class="nickname-input" type="nickname" placeholder="请输入昵称" value="{{userInfo.nickName}}" bind:change="onInputChange"/>
+    </view>
+  </view>
+  
+  <!-- 功能列表 -->
+  <view class="menu-list">
+    <view class="menu-item">
+      <text>我的订单</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item">
+      <text>我的地址</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item">
+      <text>联系客服</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <button class="save-btn" bind:tap="saveUserProfile">保 存</button>
+</view> 
