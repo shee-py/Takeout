@@ -23,7 +23,7 @@
         </view>
     </view>
 <!----------------------------------- 爆品一口价 6.9元吃大餐 ------------------------------------->
-    <view class="neck" > <!-- style="height: 128px; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -1106rpx; width: 712rpx"-->
+    <view class="neck"  style="width: 740rpx; display: flex; box-sizing: content-box; left: 0rpx; top: -44rpx">
         <!-- 标题 -->
         <view class="neck-title-nav">
         <text class="neck-title-big">爆品一口价</text>
@@ -32,13 +32,17 @@
         </view>
         <!-- 图片价格点餐区 -->
         <view class="goods-list">
-            <view class="goods-item" wx:for="{{goods-list}}" wx:key="index">
-                <image class="goods-img" src="" mode="aspectFill"></image>
+            <view class="goods-item" wx:for="{{goodsList}}" wx:key="index">
+                <!-- 照骗 -->
+                <image class="goods-img" src="{{item.img}}" mode="aspectFill"></image>
+                <!-- 店名 -->
                 <view class="shop-name">{{item.shopName}}</view>
+                <!-- 商品名 -->
                 <view class="goods-name">{{item.name}}</view>
-                <view class="subsidy">{{item.subsidy}}</view>
+                <!-- 补贴 -->
+                <view class="subsidy">已贴{{item.subsidy}}元</view>
                 <view class="price-area">
-                    <text class="current-price">¥一口价 {{item.currentPrice}}</text>
+                    <text class="current-price">一口价 ¥{{item.currentPrice}}</text>
                 </view>
             </view>
         </view>
@@ -57,9 +61,12 @@
     </view>
 <!-------------------------------- 拼单区域 ------------------------------------>
     <view class="group-buy-list">
+        <!-- 拼单区左右滑动 -->
         <scroll-view class="scroll-wrap" scroll-x>
-        <view class="group-buy-container">
+            <!-- 单个商店拼单区域 -->
+            <view class="group-buy-container">
                 <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
+                    <!-- 店名商标 时间距离 -->
                     <view class="group-buy-item-head">
                         <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></image>
                         <view class="shop-info">
@@ -67,7 +74,9 @@
                             <view class="distance-time">{{item.distance}}{{item.time}}</view>
                         </view>
                     </view>
+                    <!-- 拼单区域 下面框架整体部分 -->
                     <view class="product-list">
+                        <!-- 餐饮商品 价格销量 -->
                         <view class="product-item" wx:for="{{item.products}}"   wx:key="prodIndex"wx:for-item="prodItem">
                             <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>
                             <view class="product-name">{{prodItem.name}}</view>
@@ -76,6 +85,7 @@
                                 <view class="sold-info">{{prodItem.soldInfo}}</view>
                             </view>
                         </view>
+                        <!-- 拼单中if事件按钮 -->
                         <view class="join-end">
                             <view class="join-btn" wx:if="{{!item.isEnd}}">参与拼单</view>
                             <view class="end-tag" wx:else>已结束</view>
@@ -86,5 +96,8 @@
         </scroll-view>
     </view>
 <!---------------------------------- 玉足区域 ------------------------->
-    
+    <view class="feet">
+        
+    </view>
+
 </view>

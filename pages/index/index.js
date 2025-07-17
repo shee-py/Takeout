@@ -56,7 +56,38 @@ Page({
   }
     ],
     location: null // 定位信息
-  },
+  
+    ,goodsList:[
+        {
+          img: '/images/products/1.jpg',
+          shopName: '蜜雪冰城',
+          goodsName: '冰鲜柠檬水',
+          subsidy: '6.6',
+          currentPrice: '1.9'
+        },
+        {
+          img: '/images/products/1.jpg',
+          shopName: '华莱士',
+          goodsName: '咔滋脆鸡内堡',
+          subsidy: '7.9',
+          currentPrice: '9.9'
+        },
+        {
+          img: '/images/products/1.jpg',
+          shopName: '塔斯汀',
+          goodsName: '香辣鸡腿中国',
+          subsidy: '5',
+          currentPrice: '6.9'
+        },
+        {
+          img: '/images/products/1.jpg',
+          shopName: '库迪咖啡',
+          goodsName: '橙C美式',
+          subsidy: '10.95',
+          currentPrice: '3.9'
+        }
+    ]
+},
 
   onLoad() {
     // 页面加载时可以请求网络数据

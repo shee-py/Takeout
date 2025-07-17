@@ -81,9 +81,9 @@ page {
 }
 
 .neck{
-    background-color: grey;
+    background-color: aqua;
     position: relative;
-    top: -49px;
+    top: -22px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -97,7 +97,7 @@ page {
     width: 750rpx;
     height: 110px;
     position: relative;
-    top: -89px;
+    top: -34px;
     background-color: purple;
 }
 
@@ -106,9 +106,13 @@ page {
     position: relative;
     width: 750rpx;
     height: 189px;
-    top: -111px;
+    top: -46px;
     margin-top: 0px;
     background-color: red;
+}
+
+.feet{
+    background-color: pink;
 }
 /* ———————————————————————————————————————————————————————————————————————————————————————————————————————— */
 /* ----------------------------header--------------------------------------------------- */
@@ -178,43 +182,68 @@ page {
 }
 .neck-title-small{
     font-size: 11px;
-    padding-top: 4px;
+    padding-top: 3px;
 }
 .more{
     font-size: 25rpx;
     color: grey;
     padding-left: 43%;
+    padding-top: 4px;
 }
-/* gooos-list-itemimg-shop-name-subsidy-pricearea-currentprice */
+/* gooos-list---------------------neck */
 .goods-list{
-
+    width: 357px;
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
 }
-
+  /* 单个商品项，设置固定宽度，flex-shrink避免压缩 */
 .goods-item{
-
+    width: 190rpx;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0px;
 }
-  
-.goods-img{
-}
-  
-.shop-name{
-
-}
-  
-.goods-name{
-
-}
-  
-.subsidy{
-
-}
-  
-.price-area{
-
-}
-
-.current-price{
-}
+  /* 商品图片，设置宽高和圆角 */
+  .goods-img {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+  }
+  /* 店铺名称，设置字体大小、颜色 */
+  .shop-name {
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 8rpx;
+  }
+  /* 商品名称，设置字体大小、颜色，显示一行省略 */
+  .goods-name {
+    font-size: 22rpx;
+    color: #666;
+    margin-top: 4rpx;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* 补贴信息，设置字体大小、颜色 */
+  .subsidy {
+    font-size: 22rpx;
+    color: #999;
+    margin-top: 4rpx;
+  }
+  /* 价格区域，设置字体大小、颜色 */
+  .price-area {
+    margin-top: 6rpx;
+  }
+  /* 当前价格，设置字体大小、颜色，突出显示 */
+  .current-price {
+    font-size: 24rpx;
+    color: #ff5722;
+    font-weight: bold;
+  }
 
 /* ----------------ncek---------------------------------------------------------------------------------- */
 
@@ -285,7 +314,7 @@ page {
 
 /* --------------------------------------导航分类区下面拼单即成----------------------------- */
 
-/* 左右滑动 */
+/* 拼单区左右滑动 */
 .scroll-wrap{
     width: 100%;
     white-space: nowrap;
@@ -295,6 +324,7 @@ page {
     height: 189px;
 }
 
+/* 单个商店拼单区域 */
 .group-buy-container{
     display: inline-flex;
 }
@@ -310,10 +340,8 @@ page {
     margin-top: 0px;
 }
 
-.group-buy-item-head{
-    
-}
-  
+
+/* 店名商标 时间距离 */
 .group-buy-img {
     width: 50rpx;
     height: 37.5rpx;
@@ -328,7 +356,7 @@ page {
     display: flex;
     gap: 135px;
 }
-  
+
 .shop-name {
     font-size: 30rpx;
     color: #333;
@@ -340,13 +368,13 @@ page {
     color: #999;
     margin-top: 5rpx;
 }
-/* ----product-list---- */
+/* 拼单区域 下面框架整体部分----product-list---- */
 .product-list {
     display: flex;
     flex-wrap: wrap;
     align-items:baseline;
 }
-/* ----product-item---- */
+/* 餐饮商品 价格销量----product-item---- */
 .product-item {
     width: 30%;
     margin-right: 5%;
@@ -375,7 +403,7 @@ page {
     font-size: 24rpx;
     color: grey;
 }
-/* ----join-end----- */
+/* 拼单中if事件按钮----join-end----- */
 .join-end{
     position: relative;
     width: 80px;
