@@ -29,7 +29,31 @@ Page({
           { name: '香辣鸡腿堡', price: '22', img: '/images/products/2.jpg', soldInfo: '已拼35份' }
         ],
         isEnd: false,
-      }
+      },
+      // 新增数据1
+  {
+    shopName: '鲜果时光',
+    distance: '800m',
+    time: '25分钟',
+    img: '/images/shops/1.jpg',
+    products: [
+      { name: '草莓水果杯', price: '18', img: '/images/products/1.jpg', soldInfo: '已拼56份' },
+      { name: '蓝莓酸奶盒', price: '15', img: '/images/products/2.jpg', soldInfo: '已拼42份' }
+    ],
+    isEnd: false,
+  },
+  // 新增数据2
+  {
+    shopName: '川味小馆',
+    distance: '1.2km',
+    time: '40分钟',
+    img: '/images/shops/1.jpg',
+    products: [
+      { name: '宫保鸡丁', price: '32', img: '/images/products/1.jpg', soldInfo: '已拼18份' },
+      { name: '麻婆豆腐', price: '16', img: '/images/products/2.jpg', soldInfo: '已拼29份' }
+    ],
+    isEnd: true,  // 已结束状态
+  }
     ],
     location: null // 定位信息
   },

@@ -57,27 +57,33 @@
     </view>
 <!-------------------------------- 拼单区域 ------------------------------------>
     <view class="group-buy-list">
-        <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
-            <view class="group-buy-item-head">
-                <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></image>
-                <view class="shop-info">
-                    <view class="shop-name">{{item.shopName}}</view>
-                    <view class="distance-time">{{item.distance}}{{item.time}}</view>
-                </view>
-            </view>
-            <view class="product-list">
-                <view class="product-item" wx:for="{{item.products}}" wx:key="prodIndex" wx:for-item="prodItem">
-                    <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>
-                    <view class="product-name">{{prodItem.name}}</view>
-                    <view class="product-price-sold">
-                        <view class="product-price">¥{{prodItem.price}}</view>
-                        <view class="sold-info">{{prodItem.soldInfo}}</view>
+        <scroll-view class="scroll-wrap" scroll-x>
+        <view class="group-buy-container">
+                <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
+                    <view class="group-buy-item-head">
+                        <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></image>
+                        <view class="shop-info">
+                            <view class="shop-name">{{item.shopName}}</view>
+                            <view class="distance-time">{{item.distance}}{{item.time}}</view>
+                        </view>
+                    </view>
+                    <view class="product-list">
+                        <view class="product-item" wx:for="{{item.products}}"   wx:key="prodIndex"wx:for-item="prodItem">
+                            <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>
+                            <view class="product-name">{{prodItem.name}}</view>
+                            <view class="product-price-sold">
+                                <view class="product-price">¥{{prodItem.price}}</view>
+                                <view class="sold-info">{{prodItem.soldInfo}}</view>
+                            </view>
+                        </view>
+                        <view class="join-end">
+                            <view class="join-btn" wx:if="{{!item.isEnd}}">参与拼单</view>
+                            <view class="end-tag" wx:else>已结束</view>
+                        </view>
                     </view>
                 </view>
             </view>
-            <view class="join-btn" wx:if="{{!item.isEnd}}">参与拼单</view>
-            <view class="end-tag" wx:else>已结束</view>
-        </view>
+        </scroll-view>
     </view>
 <!---------------------------------- 玉足区域 ------------------------->
     
