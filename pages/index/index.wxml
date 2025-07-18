@@ -54,9 +54,9 @@
                 <image class='nav-icon' src="{{item.icon}}" mode="aspectFill"></image>
                 <text class="nav-text">{{item.text}}</text>
             </view>
-            <view class="tag-container">
-                <text class="tag-item" wx:for="{{tagList}}" wx:key="index">{{item.tag}}</text>
-            </view>
+        </view>
+        <view class="tag-container">
+            <text class="tag-item" wx:for="{{tagList}}" wx:key="index">{{item.tag}}</text>
         </view>
     </view>
 <!-------------------------------- 拼单区域 ------------------------------------>
@@ -97,7 +97,11 @@
     </view>
 <!---------------------------------- 玉足区域 ------------------------->
     <view class="feet">
-        
+        <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
+            <view class="product-item" wx:for="{{item.products}}"   wx:key="prodIndex"wx:for-item="prodItem">
+                <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>        
+            </view>
+        </view>
     </view>
 
 </view>

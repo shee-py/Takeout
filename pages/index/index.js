@@ -92,11 +92,21 @@ Page({
     ,navList: [
         { id: 1, icon: "/images/products/1.jpg", text: "推荐" },
         { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
         // ... 其他导航项
       ],
       // 标签数据（实际可从接口获取）
       tagList: [
         { id: 1, tag: "爆品一口价" },
+        { id: 2, tag: "附近拼单" },
+        { id: 2, tag: "附近拼单" },
+        { id: 2, tag: "附近拼单" },
+        { id: 2, tag: "附近拼单" },
+        { id: 2, tag: "附近拼单" },
+        { id: 2, tag: "附近拼单" },
         { id: 2, tag: "附近拼单" },
         // ... 其他标签项
       ]

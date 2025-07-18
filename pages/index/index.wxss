@@ -70,6 +70,7 @@ page {
     flex-direction: column;
     width: 100%;
     padding: 10px 10px 0 10px;
+    overflow-y: auto;
 }
 
 .header{
@@ -250,64 +251,87 @@ page {
 /* --------------------navigator------------------------------------------------------------------------- */
 
 /* 分类导航样式 */
-.goods-kind-nav{
+.nav-tag{
+    display: flex;
+    flex-direction:column;
+}
+
+.nav-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    padding: 5px 0;
+    flex-shrink: 0;
+    gap: 22px;
+    padding-left: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: white;
 }
-.goods-kind-nav::-webkit-scrollbar{
+.nav-container::-webkit-scrollbar {
     display: none;
 }
+
+/* .tag-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin-top: 0px;
+    background-color: aqua;
+} */
+
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    overflow-x: auto;
+    margin-top: 3px;
+    padding: 5px 8px;
+    gap: 7px;
+    background-color: white;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* 隐藏 Chrome、Safari 等 WebKit 内核浏览器的滚动条 */
+.tag-container::-webkit-scrollbar {
+    display: none;
+}
+
 /* -----nav----- */
 .nav-item{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 20%;
-    margin-bottom: 10px;
     flex-shrink: 0;
+    padding-top: 3px;
 }
 .nav-icon {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     border-radius: 8px;
     object-fit: cover;
     display: block;
+    
 }
 .nav-text {
     margin-top: 5px;
     font-size: 12px;
     text-align: center;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 /* -----tag----- */
-
-.tag-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-top: 10px;
-    overflow-x: auto;
-    padding: 0 10px;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-}
-.tag-container::-webkit-scrollbar{
-    display: none;
-}
 .tag-item {
-    padding: 5px 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    background-color: white;
-    border-radius: 15px;
-    font-size: 12px;
+    width: auto;
+    color: rgb(49, 49, 49);
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    font-size: 11px;
     flex-shrink: 0;
+    border: 1px solid white;
+    padding: 4px 8px;
 }
 
 /* -------------------------------------navigator---------------------------------------------------- */
