@@ -4,19 +4,19 @@ const config = require('../../config/api.js');
 Page({
   data: {
     // 轮播图数据
-    swiperList: [
-      { url: '/images/swiper/1.jpg' },
-      { url: '/images/swiper/2.jpg' },
-      { url: '/images/swiper/3.jpg' }
-    ],
-    // 分类导航
-    navList: [
-      { icon: '/images/nav-icons/1.png', text: '美食' },
-      { icon: '/images/nav-icons/2.png', text: '超市' },
-      { icon: '/images/nav-icons/3.png', text: '生鲜' },
-      { icon: '/images/nav-icons/4.png', text: '下午茶' },
-      { icon: '/images/nav-icons/5.png', text: '快餐' }
-    ],
+    // swiperList: [
+    //   { url: '/images/swiper/1.jpg' },
+    //   { url: '/images/swiper/2.jpg' },
+    //   { url: '/images/swiper/3.jpg' }
+    // ],
+    // // 分类导航
+    // navList: [
+    //   { icon: '/images/nav-icons/1.png', text: '美食' },
+    //   { icon: '/images/nav-icons/2.png', text: '超市' },
+    //   { icon: '/images/nav-icons/3.png', text: '生鲜' },
+    //   { icon: '/images/nav-icons/4.png', text: '下午茶' },
+    //   { icon: '/images/nav-icons/5.png', text: '快餐' }
+    // ],
     // 拼单列表
     groupBuyList: [
       {
@@ -87,6 +87,19 @@ Page({
           currentPrice: '3.9'
         }
     ]
+
+    // 导航数据（实际可从接口获取）
+    ,navList: [
+        { id: 1, icon: "/images/products/1.jpg", text: "推荐" },
+        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+        // ... 其他导航项
+      ],
+      // 标签数据（实际可从接口获取）
+      tagList: [
+        { id: 1, tag: "爆品一口价" },
+        { id: 2, tag: "附近拼单" },
+        // ... 其他标签项
+      ]
 },
 
   onLoad() {

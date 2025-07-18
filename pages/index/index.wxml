@@ -51,11 +51,11 @@
     <view class="nav-tag">
         <view class="nav-container">
             <view class="nav-item" wx:for="{{navList}}" wx:key="index">
-                <image class='nav-icon' src="" mode="aspectFill"></image>
-                <text class="nav-text"></text>
+                <image class='nav-icon' src="{{item.icon}}" mode="aspectFill"></image>
+                <text class="nav-text">{{item.text}}</text>
             </view>
             <view class="tag-container">
-                <text class="tag-item" wx:for="{{tagList}}" wx:key="index"></text>
+                <text class="tag-item" wx:for="{{tagList}}" wx:key="index">{{item.tag}}</text>
             </view>
         </view>
     </view>
