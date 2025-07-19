@@ -1,14 +1,14 @@
 <!--index.wxml-->
 <!-- 主容器 -->
 <view class="container">
-<!---------------------------------- 导航栏 ---------------------------------------------->
-    <view class="header" style="position: relative; left: 0rpx; top: -20rpx">
+<!---------------------------------- 导航栏 --------------------------------------->
+    <view class="header">
         <view class="title-location-row"> 
             <!-- 标题 -->
             <text class="title">美团拼好饭</text>
             <!-- 地址定位 -->
             <view class="location" bindtap="getLocation">
-                <image src="/images/Repositioning (重新定位).png" class="location-icon"></image>
+                <image src="/images/Repositioning (重新定位).png" class="location-icon"></  image>
                 <text>{{location ? (location.address || '已定位') : '未定位'}}</text>
             </view>
         </view>
@@ -19,19 +19,20 @@
         </view>
         <!-- 搜索栏 -->
         <view class="search-box">
-            <input type="text" class="search-input" placeholder="请输入商家或商品名称" bindinput="onSearchInput"/>
+            <input type="text" class="search-input" placeholder="请输入商家或商品名称"  bindinput="onSearchInput"/>
         </view>
     </view>
-<!----------------------------------- 爆品一口价 6.9元吃大餐 ------------------------------------->
-    <view class="neck"  style="width: 740rpx; display: flex; box-sizing: content-box; left: 0rpx; top: -44rpx">
+<!-------------------------- 爆品一口价 6.9元吃大餐 ------------------------------->
+    <view class="neck">
         <!-- 标题 -->
         <view class="neck-title-nav">
-        <text class="neck-title-big">爆品一口价</text>
-        <text class="neck-title-small">6.9元吃大牌</text>
-        <navigator url="" class="more">更多></navigator>
+            <text class="neck-title-big">爆品一口价</text>
+            <text class="neck-title-small">6.9元吃大牌</text>
+            <navigator url="" class="more">更多></navigator>
         </view>
         <!-- 图片价格点餐区 -->
         <view class="goods-list">
+            <!-- 获取goodsList -->
             <view class="goods-item" wx:for="{{goodsList}}" wx:key="index">
                 <!-- 照骗 -->
                 <image class="goods-img" src="{{item.img}}" mode="aspectFill"></image>
@@ -47,39 +48,49 @@
             </view>
         </view>
     </view>
-<!--------------------------------- 分类导航 -------------------------------------->
+<!-------------------------------- 分类导航 -------------------------------------->
     <view class="nav-tag">
+        <!-- 上层部分 -->
         <view class="nav-container">
+            <!-- 获取navList -->
             <view class="nav-item" wx:for="{{navList}}" wx:key="index">
+                <!-- 图片 -->
                 <image class='nav-icon' src="{{item.icon}}" mode="aspectFill"></image>
+                <!-- 文本 -->
                 <text class="nav-text">{{item.text}}</text>
             </view>
         </view>
+        <!-- 下层部分 -->
         <view class="tag-container">
+            <!-- 获取tagList 打印标签 -->
             <text class="tag-item" wx:for="{{tagList}}" wx:key="index">{{item.tag}}</text>
         </view>
     </view>
-<!-------------------------------- 拼单区域 ------------------------------------>
+<!------------------------------- 拼单区域 ------------------------------------>
     <view class="group-buy-list">
         <!-- 拼单区左右滑动 -->
         <scroll-view class="scroll-wrap" scroll-x>
             <!-- 单个商店拼单区域 -->
             <view class="group-buy-container">
+                <!-- 获取groupBuyList -->
                 <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
                     <!-- 店名商标 时间距离 -->
                     <view class="group-buy-item-head">
-                        <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></image>
+                        <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></    image>
                         <view class="shop-info">
                             <view class="shop-name">{{item.shopName}}</view>
-                            <view class="distance-time">{{item.distance}}{{item.time}}</view>
+                            <view class="distance-time">{{item.distance}}{{item.time}}</    view>
                         </view>
                     </view>
                     <!-- 拼单区域 下面框架整体部分 -->
                     <view class="product-list">
-                        <!-- 餐饮商品 价格销量 -->
-                        <view class="product-item" wx:for="{{item.products}}"   wx:key="prodIndex"wx:for-item="prodItem">
+                        <!-- 获取groupBuyList内部的product 命名为prodItem -->
+                        <view class="product-item" wx:for="{{item.products}}"      wx:key="prodIndex"wx:for-item="prodItem">
+                            <!-- 图片 -->
                             <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>
+                            <!-- 名字 -->
                             <view class="product-name">{{prodItem.name}}</view>
+                            <!-- 价格 销量 -->
                             <view class="product-price-sold">
                                 <view class="product-price">¥{{prodItem.price}}</view>
                                 <view class="sold-info">{{prodItem.soldInfo}}</view>
@@ -97,9 +108,51 @@
     </view>
 <!---------------------------------- 玉足区域 ------------------------->
     <view class="feet">
-        <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
-            <view class="product-item" wx:for="{{item.products}}"   wx:key="prodIndex"wx:for-item="prodItem">
-                <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>        
+        <!-- 获取feetList -->
+        <view class="feet-goods-list" wx:for="{{feetList}}" wx:key="index">
+            <!-- 商品框 -->
+            <view class="feet-goods-item">
+                <!-- 照骗 -->
+                <image class="feet-goods-img" src="{{item.img}}" mode="aspectFill"/></image>
+                <!-- 信息 -->
+                <view class="feet-goods-info">
+                    <!-- 付费打广告 -->
+                    <view class="feet-hasPaid-shopName" wx:if="{{hasPaid}}">{{item.shopName}}</view>
+                    <!-- 商品内容 -->
+                    <view class="feet-goods-name">{{item.goodsName}}</view>
+                </view>
+                <!-- 标签 -->
+                <view class="feet-tag-container">
+                    <!-- 年-连锁 框架 -->
+                    <view class="feet-tag-years-chain">
+                        <!-- 年标签 -->
+                        <view class="feet-tag-years" wx:if="{{item.years >= 3}}">收录{{item.years}}年</view>
+                        <!-- 连锁标签 -->
+                        <view class="feet-tag-chain" wx:elif="{{item.isChain}}">连锁</view>
+                    </view>
+                    <!-- 店名(位置区) 时长 距离 -->
+                    <view class="feet-tag-shopName-time-distance">
+                        {{ (item.shopName + '(' + item.address + '店' + ')').length > 8
+                          ? (item.shopName + '(' + item.address + '店' + ')').substring(0,8) + '...'
+                          : (item.shopName + '(' + item.address + '店' + ')') }} | {{item.time}} {{item.distance}}
+                    </view>
+                    <!-- 评价 -->
+                    <view class="feet-tag-comment" wx:for="comment" wx:key="comIndex" wx:for-item="comItem">
+                         {{comItem}} 
+                         <!--这里要实现从众多数据里面随机抽3-4个好评 不足3个好评的直接有多少放多少 并且累计不超过长度24 -->
+                    </view>
+                    <!-- 价格 累计拼单 -->
+                    <view class="feet-price-container">
+                        <!-- 整数 -->
+                        <view class="feet-priceInteger">¥{{price.split('.')[0]}}</view>
+                        <!-- 小数 -->
+                        <view class="feet-priceDecimal">.{{price.split('.')[1]}}</view>
+                        <!-- 累计拼单 -->
+                        <view class="feet-totalGroupOrder">已拼{{item.feet-totalGroupOrder}}份</view>
+                        <!-- 是否立即拼成 -->
+                        <view class="feet-group-status" wx:if:if="{{remaining === 1}}">立即拼成</view>
+                    </view>
+                </view>
             </view>
         </view>
     </view>
