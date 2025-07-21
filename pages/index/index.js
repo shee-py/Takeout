@@ -31,89 +31,149 @@ Page({
         isEnd: false,
       },
       // 新增数据1
-  {
-    shopName: '鲜果时光',
-    distance: '800m',
-    time: '25分钟',
-    img: '/images/shops/1.jpg',
-    products: [
-      { name: '草莓水果杯', price: '18', img: '/images/products/1.jpg', soldInfo: '已拼56份' },
-      { name: '蓝莓酸奶盒', price: '15', img: '/images/products/2.jpg', soldInfo: '已拼42份' }
-    ],
-    isEnd: false,
-  },
-  // 新增数据2
-  {
-    shopName: '川味小馆',
-    distance: '1.2km',
-    time: '40分钟',
-    img: '/images/shops/1.jpg',
-    products: [
-      { name: '宫保鸡丁', price: '32', img: '/images/products/1.jpg', soldInfo: '已拼18份' },
-      { name: '麻婆豆腐', price: '16', img: '/images/products/2.jpg', soldInfo: '已拼29份' }
-    ],
-    isEnd: true,  // 已结束状态
-  }
+      {
+        shopName: '鲜果时光',
+        distance: '800m',
+        time: '25分钟',
+        img: '/images/shops/1.jpg',
+        products: [
+          { name: '草莓水果杯', price: '18', img: '/images/products/1.jpg', soldInfo: '已拼56份' },
+          { name: '蓝莓酸奶盒', price: '15', img: '/images/products/2.jpg', soldInfo: '已拼42份' }
+        ],
+        isEnd: false,
+      },
+      // 新增数据2
+      {
+        shopName: '川味小馆',
+        distance: '1.2km',
+        time: '40分钟',
+        img: '/images/shops/1.jpg',
+        products: [
+          { name: '宫保鸡丁', price: '32', img: '/images/products/1.jpg', soldInfo: '已拼18份' },
+          { name: '麻婆豆腐', price: '16', img: '/images/products/2.jpg', soldInfo: '已拼29份' }
+        ],
+        isEnd: true,  // 已结束状态
+      }
     ],
     location: null // 定位信息
-  
-    ,goodsList:[
-        {
-          img: '/images/products/1.jpg',
-          shopName: '蜜雪冰城',
-          goodsName: '冰鲜柠檬水',
-          subsidy: '6.6',
-          currentPrice: '1.9'
-        },
-        {
-          img: '/images/products/1.jpg',
-          shopName: '华莱士',
-          goodsName: '咔滋脆鸡内堡',
-          subsidy: '7.9',
-          currentPrice: '9.9'
-        },
-        {
-          img: '/images/products/1.jpg',
-          shopName: '塔斯汀',
-          goodsName: '香辣鸡腿中国',
-          subsidy: '5',
-          currentPrice: '6.9'
-        },
-        {
-          img: '/images/products/1.jpg',
-          shopName: '库迪咖啡',
-          goodsName: '橙C美式',
-          subsidy: '10.95',
-          currentPrice: '3.9'
-        }
+
+    , goodsList: [
+      {
+        img: '/images/products/1.jpg',
+        shopName: '蜜雪冰城',
+        goodsName: '冰鲜柠檬水',
+        subsidy: '6.6',
+        currentPrice: '1.9'
+      },
+      {
+        img: '/images/products/1.jpg',
+        shopName: '华莱士',
+        goodsName: '咔滋脆鸡内堡',
+        subsidy: '7.9',
+        currentPrice: '9.9'
+      },
+      {
+        img: '/images/products/1.jpg',
+        shopName: '塔斯汀',
+        goodsName: '香辣鸡腿中国',
+        subsidy: '5',
+        currentPrice: '6.9'
+      },
+      {
+        img: '/images/products/1.jpg',
+        shopName: '库迪咖啡',
+        goodsName: '橙C美式',
+        subsidy: '10.95',
+        currentPrice: '3.9'
+      }
     ]
 
     // 导航数据（实际可从接口获取）
-    ,navList: [
-        { id: 1, icon: "/images/products/1.jpg", text: "推荐" },
-        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-        { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-        // ... 其他导航项
-      ],
-      // 标签数据（实际可从接口获取）
-      tagList: [
-        { id: 1, tag: "爆品一口价" },
-        { id: 2, tag: "附近拼单" },
-        { id: 2, tag: "附近拼单" },
-        { id: 2, tag: "附近拼单" },
-        { id: 2, tag: "附近拼单" },
-        { id: 2, tag: "附近拼单" },
-        { id: 2, tag: "附近拼单" },
-        { id: 2, tag: "附近拼单" },
-        // ... 其他标签项
-      ]
-},
+    , navList: [
+      { id: 1, icon: "/images/products/1.jpg", text: "推荐" },
+      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
+      // ... 其他导航项
+    ],
+    // 标签数据（实际可从接口获取）
+    tagList: [
+      { id: 1, tag: "爆品一口价" },
+      { id: 2, tag: "附近拼单" },
+      { id: 2, tag: "附近拼单" },
+      { id: 2, tag: "附近拼单" },
+      { id: 2, tag: "附近拼单" },
+      { id: 2, tag: "附近拼单" },
+      { id: 2, tag: "附近拼单" },
+      { id: 2, tag: "附近拼单" },
+      // ... 其他标签项
+    ],
+    // 新增feetList数据
+    feetList: [
+      {
+        img: '/images/products/1.jpg',
+        shopName: '星巴克',
+        address: '世贸天阶',
+        hasPaid: true,
+        goodsName: '星冰乐套餐',
+        years: 5,
+        isChain: false,
+        time: '30分钟',
+        distance: '1.5km',
+        comment: ['好喝', '环境好'], // 示例评论，实际应根据需求随机抽取
+        price: '35.50',
+        remaining: 1, // 立即拼成
+        feet_totalGroupOrder: 120
+      },
+      {
+        img: '/images/products/2.jpg',
+        shopName: '海底捞',
+        address: '三里屯',
+        hasPaid: false,
+        goodsName: '单人火锅套餐',
+        years: 2,
+        isChain: true,
+        time: '45分钟',
+        distance: '2.0km',
+        comment: ['服务周到', '味道不错', '排队久'],
+        price: '88.00',
+        remaining: 5,
+        feet_totalGroupOrder: 80
+      },
+      {
+        img: '/images/products/1.jpg',
+        shopName: '麦当劳',
+        address: '大望路',
+        hasPaid: true,
+        goodsName: '巨无霸汉堡',
+        years: 3,
+        isChain: true,
+        time: '20分钟',
+        distance: '0.8km',
+        comment: ['出餐快', '味道好'],
+        price: '20.00',
+        remaining: 0, // 已结束
+        feet_totalGroupOrder: 200
+      }
+    ]
+  },
 
   onLoad() {
     // 页面加载时可以请求网络数据
+    this.processFeetList();
+  },
+
+  processFeetList() {
+    const feetList = this.data.feetList.map(item => {
+      const fullShopName = item.shopName + '(' + item.address + '店)';
+      item.displayShopName = fullShopName.length > 8 ? fullShopName.substring(0, 8) + '...' : fullShopName;
+      // 确保price是字符串类型，以便split
+      item.price = String(item.price);
+      return item;
+    });
+    this.setData({ feetList });
   },
 
   onSearchInput(e) {
@@ -300,6 +360,14 @@ Page({
     wx.showToast({
       title: '定位成功',
       icon: 'success'
+    });
+  },
+
+  // 跳转到拼单详情页
+  goToGroupDetail(e) {
+    const { shopName, productName } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/group-detail/group-detail?shopName=${encodeURIComponent(shopName)}&productName=${encodeURIComponent(productName)}`
     });
   }
 })

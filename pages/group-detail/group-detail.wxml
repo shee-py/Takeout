@@ -1,0 +1,143 @@
+<!--pages/group-detail/group-detail.wxml-->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-left" bindtap="goBack">
+      <image class="back-icon" src="/images/返回键-01.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 主要内容区域 -->
+  <scroll-view class="main-content" scroll-y>
+    <!-- 商品图片区域 -->
+    <view class="product-image-section">
+      <image class="main-image" src="{{goodsInfo.mainImage}}" mode="aspectFill" bindtap="previewImage"/>
+      <view class="image-overlay">
+        <view class="product-tags">
+          <text class="tag hot-tag">比点单便宜</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 价格和补贴信息 -->
+    <view class="price-section">
+      <view class="price-info">
+        <text class="current-price">¥{{goodsInfo.currentPrice}}</text>
+        <text class="price-unit">补贴价</text>
+        <view class="subsidy-info">
+          <text class="subsidy-tag">超值补贴</text>
+          <text class="subsidy-amount">已补贴¥{{goodsInfo.subsidy}}</text>
+          <text class="sold-count">已拼{{goodsInfo.soldCount}}份</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 商品名称 -->
+    <view class="product-name-section">
+      <text class="product-name">{{goodsInfo.name}}</text>
+    </view>
+
+    <!-- 商家信息 -->
+    <view class="shop-info-section">
+      <text class="shop-detail">详情</text>
+      <text class="shop-name">{{goodsInfo.shopName}}</text>
+      <view class="delivery-info">
+        <text class="delivery-text">配送费 ¥{{goodsInfo.deliveryFee}}</text>
+        <text class="delivery-time">{{goodsInfo.deliveryTime}}</text>
+        <text class="distance">{{goodsInfo.distance}}</text>
+      </view>
+    </view>
+
+    <!-- 商家评分信息 -->
+    <view class="rating-section">
+      <image class="shop-avatar" src="/images/shops/1.jpg"/>
+      <view class="shop-rating-info">
+        <text class="shop-name-rating">蜜雪冰城（高州水阳店）</text>
+        <text class="official-tag">官方</text>
+        <text class="rating-score">{{goodsInfo.rating}}分超高</text>
+        <text class="rating-percent">这样半好评率{{goodsInfo.ratingCount}}</text>
+      </view>
+    </view>
+
+    <!-- 拼团状态 -->
+    <view class="group-status-section">
+      <text class="group-title">{{groupInfo.participantCount}}人已拼 参与立即拼成</text>
+      <view class="participant-info">
+        <image class="participant-avatar" src="{{participants[0].avatar}}"/>
+        <view class="participant-detail">
+          <text class="participant-name">{{participants[0].nickname}}</text>
+          <text class="join-time">{{participants[0].joinTime}}{{participants[0].daysBefore}}天前</text>
+          <text class="group-leader">直接拼成</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 用户评价 -->
+    <view class="review-section">
+      <view class="review-header">
+        <text class="review-title">用户评价</text>
+        <text class="review-rating">{{reviewInfo.avgRating}}分超高</text>
+        <text class="review-percent">这样半好评率{{reviewInfo.goodRate}}</text>
+      </view>
+      
+      <view class="review-stats">
+        <text class="review-count">清爽({{reviewInfo.totalCount}})</text>
+        <text class="review-count">回头客({{reviewInfo.goodCount}})</text>
+        <text class="review-count">价格实惠</text>
+      </view>
+
+      <view class="review-highlight">
+        <view class="heart-icon">♡</view>
+        <text class="review-highlight-text">拼好饮AI评价馆</text>
+      </view>
+
+      <view class="ai-summary">
+        <text class="ai-summary-text">这款奶茶真的很不错！奶香浓郁，茶味清香，口感顺滑，性价比很高，成为不少顾客的回购选择。配送速度也很快，无论是工作间隙还是休闲时光，都能带来愉悦的味蕾体验，都能带来...</text>
+      </view>
+
+      <view class="ai-note">
+        <text class="ai-note-text">{{aiSummary}}</text>
+        <view class="thumbs-icons">
+          <text class="thumb-up">👍</text>
+          <text class="thumb-down">👎</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 更多奶茶推荐 -->
+    <view class="recommend-section">
+      <text class="recommend-title">更多奶茶</text>
+      <view class="recommend-list">
+        <view class="recommend-item" wx:for="{{recommendList}}" wx:key="index">
+          <image class="recommend-image" src="{{item.image}}" mode="aspectFill"/>
+          <view class="recommend-info">
+            <text class="recommend-tag">{{item.tag}}</text>
+            <text class="recommend-name">{{item.name}}</text>
+            <view class="recommend-price-info">
+              <text class="recommend-price">¥{{item.price}}</text>
+              <text class="recommend-original-price">特价{{item.originalPrice}}</text>
+              <text class="recommend-action">自营商家</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="bottom-left">
+      <view class="group-progress">
+        <text class="progress-text">参与立即拼成，无需等待</text>
+        <text class="time-left">{{groupInfo.timeLeft}}</text>
+      </view>
+    </view>
+    <view class="bottom-right">
+      <text class="single-buy">¥{{goodsInfo.originalPrice}} 单独买</text>
+      <view class="group-buy-btn" bindtap="joinGroup">
+        <text class="group-price">¥{{goodsInfo.currentPrice}}</text>
+        <text class="group-action">发起拼成</text>
+      </view>
+    </view>
+  </view>
+</view> 

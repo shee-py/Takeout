@@ -8,7 +8,7 @@
             <text class="title">美团拼好饭</text>
             <!-- 地址定位 -->
             <view class="location" bindtap="getLocation">
-                <image src="/images/Repositioning (重新定位).png" class="location-icon"></  image>
+                <image src="/images/Repositioning (重新定位).png" class="location-icon"></image>
                 <text>{{location ? (location.address || '已定位') : '未定位'}}</text>
             </view>
         </view>
@@ -76,16 +76,16 @@
                 <view class="group-buy-item" wx:for="{{groupBuyList}}" wx:key="index">
                     <!-- 店名商标 时间距离 -->
                     <view class="group-buy-item-head">
-                        <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></    image>
+                        <image class="group-buy-img" src="{{item.img}}" mode="aspectFill"></image>
                         <view class="shop-info">
                             <view class="shop-name">{{item.shopName}}</view>
-                            <view class="distance-time">{{item.distance}}{{item.time}}</    view>
+                            <view class="distance-time">{{item.time}}{{item.distance}}</view>
                         </view>
                     </view>
                     <!-- 拼单区域 下面框架整体部分 -->
                     <view class="product-list">
                         <!-- 获取groupBuyList内部的product 命名为prodItem -->
-                        <view class="product-item" wx:for="{{item.products}}"      wx:key="prodIndex"wx:for-item="prodItem">
+                        <view class="product-item" wx:for="{{item.products}}" wx:key="prodIndex" wx:for-item="prodItem" bindtap="goToGroupDetail" data-shop-name="{{item.shopName}}" data-product-name="{{prodItem.name}}">
                             <!-- 图片 -->
                             <image class="product-img" src="{{prodItem.img}}" mode="aspectFill"></image>
                             <!-- 名字 -->
@@ -98,7 +98,7 @@
                         </view>
                         <!-- 拼单中if事件按钮 -->
                         <view class="join-end">
-                            <view class="join-btn" wx:if="{{!item.isEnd}}">参与拼单</view>
+                            <view class="join-btn" wx:if="{{!item.isEnd}}" bindtap="goToGroupDetail" data-shop-name="{{item.shopName}}" data-product-name="{{item.products[0].name}}">参与拼单</view>
                             <view class="end-tag" wx:else>已结束</view>
                         </view>
                     </view>
@@ -113,7 +113,7 @@
             <!-- 商品框 -->
             <view class="feet-goods-item">
                 <!-- 照骗 -->
-                <image class="feet-goods-img" src="{{item.img}}" mode="aspectFill"/></image>
+                <image class="feet-goods-img" src="{{item.img}}" mode="aspectFill"/>
                 <!-- 信息 -->
                 <view class="feet-goods-info">
                     <!-- 付费打广告 -->
@@ -132,9 +132,7 @@
                     </view>
                     <!-- 店名(位置区) 时长 距离 -->
                     <view class="feet-tag-shopName-time-distance">
-                        {{ (item.shopName + '(' + item.address + '店' + ')').length > 8
-                          ? (item.shopName + '(' + item.address + '店' + ')').substring(0,8) + '...'
-                          : (item.shopName + '(' + item.address + '店' + ')') }} | {{item.time}} {{item.distance}}
+                        {{item.displayShopName}} | {{item.time}} {{item.distance}}
                     </view>
                     <!-- 评价 -->
                     <view class="feet-tag-comment" wx:for="comment" wx:key="comIndex" wx:for-item="comItem">
@@ -150,7 +148,7 @@
                         <!-- 累计拼单 -->
                         <view class="feet-totalGroupOrder">已拼{{item.feet-totalGroupOrder}}份</view>
                         <!-- 是否立即拼成 -->
-                        <view class="feet-group-status" wx:if:if="{{remaining === 1}}">立即拼成</view>
+                        <view class="feet-group-status" wx:if="{{remaining === 1}}">立即拼成</view>
                     </view>
                 </view>
             </view>

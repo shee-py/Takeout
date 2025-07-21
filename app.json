@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/group-detail/group-detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",
