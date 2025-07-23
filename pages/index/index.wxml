@@ -114,41 +114,45 @@
             <view class="feet-goods-item">
                 <!-- 照骗 -->
                 <image class="feet-goods-img" src="{{item.img}}" mode="aspectFill"/>
-                <!-- 信息 -->
-                <view class="feet-goods-info">
-                    <!-- 付费打广告 -->
-                    <view class="feet-hasPaid-shopName" wx:if="{{hasPaid}}">{{item.shopName}}</view>
-                    <!-- 商品内容 -->
-                    <view class="feet-goods-name">{{item.goodsName}}</view>
-                </view>
-                <!-- 标签 -->
-                <view class="feet-tag-container">
-                    <!-- 年-连锁 框架 -->
-                    <view class="feet-tag-years-chain">
-                        <!-- 年标签 -->
-                        <view class="feet-tag-years" wx:if="{{item.years >= 3}}">收录{{item.years}}年</view>
-                        <!-- 连锁标签 -->
-                        <view class="feet-tag-chain" wx:elif="{{item.isChain}}">连锁</view>
+                <view class="feet-container">
+                    <!-- info-head -->
+                    <view class="feet-goods-info">
+                        <!-- 付费打广告 -->
+                        <view class="feet-hasPaid-shopName" wx:if="{{hasPaid}}">{{item.shopName}}</view>
+                        <!-- 商品内容 -->
+                        <view class="feet-goods-name">{{item.goodsName}}</view>
                     </view>
-                    <!-- 店名(位置区) 时长 距离 -->
-                    <view class="feet-tag-shopName-time-distance">
-                        {{item.displayShopName}} | {{item.time}} {{item.distance}}
+                    <!-- info-mid -->
+                    <view class="feet-tag-mid">
+                        <!-- 年-连锁 框架 -->
+                        <view class="feet-tag-years-chain">
+                            <!-- 年标签 -->
+                            <view class="feet-tag-years" wx:if="{{item.years >= 3}}">收录{{item.years}}年</view>
+                            <!-- 连锁标签 -->
+                            <view class="feet-tag-chain" wx:elif="{{item.isChain}}">连锁</view>
+                        </view>
+                        <!-- 店名(位置区) 时长 距离 -->
+                        <view class="feet-tag-shopName-time-distance">
+                            {{item.displayShopName}} | {{item.time}} {{item.distance}}
+                        </view>
                     </view>
-                    <!-- 评价 -->
-                    <view class="feet-tag-comment" wx:for="comment" wx:key="comIndex" wx:for-item="comItem">
-                         {{comItem}} 
-                         <!--这里要实现从众多数据里面随机抽3-4个好评 不足3个好评的直接有多少放多少 并且累计不超过长度24 -->
+                    <!-- info-bottom -->
+                    <view class="feet-tag-bottom">
+                        <view class="feet-tag-comment" wx:for="{{item.comment}}" wx:key="comIndex" wx:for-item="comItem">
+                            {{comItem}} 
+                            <!--这里要实现从众多数据里面随机抽3-4个好评 不足3个好评的直接有多少放多少 并且累计不超过长度24 -->
+                        </view>
                     </view>
                     <!-- 价格 累计拼单 -->
                     <view class="feet-price-container">
                         <!-- 整数 -->
-                        <view class="feet-priceInteger">¥{{price.split('.')[0]}}</view>
+                        <view class="feet-priceInteger">¥{{item.price.split('.')[0]}}</view>
                         <!-- 小数 -->
-                        <view class="feet-priceDecimal">.{{price.split('.')[1]}}</view>
+                        <view class="feet-priceDecimal">.{{item.price.split('.')[1]}}</view>
                         <!-- 累计拼单 -->
-                        <view class="feet-totalGroupOrder">已拼{{item.feet-totalGroupOrder}}份</view>
+                        <view class="feet-totalGroupOrder">已拼{{item.feet_totalGroupOrder}}份</view>
                         <!-- 是否立即拼成 -->
-                        <view class="feet-group-status" wx:if="{{remaining === 1}}">立即拼成</view>
+                        <view class="feet-group-status" wx:if="{{item.remaining === 1}}">立即拼成></view>
                     </view>
                 </view>
             </view>

@@ -117,7 +117,7 @@ Page({
         shopName: '星巴克',
         address: '世贸天阶',
         hasPaid: true,
-        goodsName: '星冰乐套餐',
+        goodsName: '星冰乐套餐梁枫铖梁枫铖梁枫铖梁枫铖梁枫铖梁枫铖我们喜欢你梁枫铖梁枫铖',
         years: 5,
         isChain: false,
         time: '30分钟',
@@ -164,6 +164,7 @@ Page({
     // 页面加载时可以请求网络数据
     this.processFeetList();
   },
+
 
   processFeetList() {
     const feetList = this.data.feetList.map(item => {

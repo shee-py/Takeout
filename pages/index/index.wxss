@@ -450,3 +450,141 @@ page {
     font-weight: bold; 
     color: white;
 }
+
+/* ————————————————————————————feet—————————————————————————————————————— */
+
+.feet {
+    padding: 20rpx;
+    background-color: #f7f7f7;
+}
+  
+.feet-goods-list {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 20rpx;
+}
+  
+  .feet-goods-item {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 20rpx;
+}
+  
+.feet-goods-img {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 20rpx;
+    flex-shrink: 0;
+}
+
+  
+.feet-goods-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 16rpx;
+    flex: 1;
+}
+  
+.feet-hasPaid-shopName {
+    color: #ff9900;
+    font-size: 24rpx;
+    margin-bottom: 8rpx;
+}
+  
+.feet-goods-name {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+/* ---feet-tag-container--- */
+.feet-tag-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10rpx;
+    gap: 12rpx;
+    width: 400rpx;
+}
+
+/* ---feet-tag-mid--- */
+.feet-tag-mid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+.feet-tag-years,
+.feet-tag-chain {
+    padding: 4rpx 16rpx;
+    font-size: 22rpx;
+    color: rgb(134, 100, 7);
+}
+  
+.feet-tag-shopName-time-distance {
+    font-size: 22rpx;
+    color: #999;
+}
+
+/* ---feet-tag-bottom--- */
+.feet-tag-bottom{
+    display: flex;
+    flex-direction: row;
+    gap: 16rpx;
+    padding: 4rpx 16rpx;
+}
+  
+.feet-tag-comment {
+    width: auto;
+    font-size: 22rpx;
+    color: rgb(216, 166, 2);
+}
+
+/* ---feet-price-container */
+  .feet-price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 8rpx;
+    padding: 4rpx 16rpx;
+    /* 新增：绝对定位到底部 */
+    /* position: absolute; 
+    bottom: 300rpx;
+    left: 261rpx;  */
+  }
+  
+  .feet-priceInteger {
+    font-size: 32rpx;
+    color: #ff5722;
+    font-weight: bold;
+  }
+  
+  .feet-priceDecimal {
+    font-size: 24rpx;
+    color: #ff5722;
+  }
+  
+  .feet-totalGroupOrder {
+    font-size: 22rpx;
+    color: #999;
+    margin-left: 10rpx;
+  }
+  
+  .feet-group-status {
+    margin-left: auto;
+    padding: 4rpx 8rpx;
+    background-color: #fff0f0;
+    color: rgb(189, 2, 2);
+    font-size: 22rpx;
+    border-radius: 20rpx;
+    white-space: nowrap;
+  }
+  
