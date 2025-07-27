@@ -172,6 +172,12 @@ Page({
       item.displayShopName = fullShopName.length > 8 ? fullShopName.substring(0, 8) + '...' : fullShopName;
       // 确保price是字符串类型，以便split
       item.price = String(item.price);
+
+      // WXML中无法使用split，所以在此处预处理
+      const priceParts = item.price.split('.');
+      item.priceInteger = priceParts[0];
+      item.priceDecimal = priceParts[1];
+
       return item;
     });
     this.setData({ feetList });

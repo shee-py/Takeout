@@ -146,9 +146,9 @@
                     <!-- 价格 累计拼单 -->
                     <view class="feet-price-container">
                         <!-- 整数 -->
-                        <view class="feet-priceInteger">¥{{item.price.split('.')[0]}}</view>
+                        <view class="feet-priceInteger">¥{{item.priceInteger}}</view>
                         <!-- 小数 -->
-                        <view class="feet-priceDecimal">.{{item.price.split('.')[1]}}</view>
+                        <view class="feet-priceDecimal">.{{item.priceDecimal}}</view>
                         <!-- 累计拼单 -->
                         <view class="feet-totalGroupOrder">已拼{{item.feet_totalGroupOrder}}份</view>
                         <!-- 是否立即拼成 -->
