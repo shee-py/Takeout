@@ -452,7 +452,6 @@ page {
 }
 
 /* ————————————————————————————feet—————————————————————————————————————— */
-
 .feet {
     padding: 20rpx;
     background-color: #f7f7f7;
@@ -465,7 +464,7 @@ page {
     gap: 20rpx;
 }
   
-  .feet-goods-item {
+.feet-goods-item {
     display: flex;
     flex-direction: row;
     background-color: #fff;
@@ -550,7 +549,7 @@ page {
 }
 
 /* ---feet-price-container */
-  .feet-price-container {
+.feet-price-container {
     display: flex;
     align-items: baseline;
     gap: 8rpx;
@@ -559,26 +558,26 @@ page {
     /* position: absolute; 
     bottom: 300rpx;
     left: 261rpx;  */
-  }
+}
   
-  .feet-priceInteger {
+.feet-priceInteger {
     font-size: 32rpx;
     color: #ff5722;
     font-weight: bold;
-  }
+}
   
-  .feet-priceDecimal {
+.feet-priceDecimal {
     font-size: 24rpx;
     color: #ff5722;
-  }
+}
   
-  .feet-totalGroupOrder {
+.feet-totalGroupOrder {
     font-size: 22rpx;
     color: #999;
     margin-left: 10rpx;
-  }
+}
   
-  .feet-group-status {
+.feet-group-status {
     margin-left: auto;
     padding: 4rpx 8rpx;
     background-color: #fff0f0;
@@ -586,5 +585,5 @@ page {
     font-size: 22rpx;
     border-radius: 20rpx;
     white-space: nowrap;
-  }
+}
   
