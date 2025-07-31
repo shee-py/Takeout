@@ -29,7 +29,7 @@
 ## 2. 配置小程序
 
 ### 步骤1：更新API密钥
-打开 `config/api.js` 文件，将 `YOUR_TENCENT_MAP_KEY` 替换为你的实际密钥：
+打开 [`config/api.js`](/config/api.js) 文件，将 `YOUR_TENCENT_MAP_KEY` 替换为你的实际密钥：
 
 ```javascript
 const config = {
