@@ -82,7 +82,7 @@ page {
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow-y: auto;
+    background-color: rgb(247, 245, 245);
 }
 
 /* 头部区域，绿色背景，内边距 */
@@ -91,12 +91,11 @@ page {
     flex-direction: column;
     padding: 3%;
     width: 100%;
-    background-color: green;
+    /* background-color: green; */
 }
 
 /* 头部下方“脖子”区域，浅蓝色背景，阴影，纵向flex */
 .neck {
-    background-color: aqua;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -105,7 +104,8 @@ page {
     width: 100%;
     height: 25%;
     box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
-    /* border-radius: 20rpx; */
+    /* border-radius: 20rpx; */    
+    /* background-color: aqua; */
 }
 
 /* 分类导航区外层，紫色背景，高度16% */
@@ -113,7 +113,7 @@ page {
     width: 100%;
     height: 16%;
     position: relative;
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 /* 拼单列表区，红色背景，高度189px */
@@ -121,17 +121,17 @@ page {
     margin-top: 20rpx;
     position: relative;
     width: 100%;
-    height: 189px;
+    height: 378rpx;
     margin-top: 0px;
-    background-color: red;
+    /* background-color:red; */
 }
 
 /* 底部区域，粉色背景 */
 .feet {
     width: 100%;
     position: relative;
-    background-color: pink;
-    top: 10px;
+    /* background-color: pink; */
+    top: 20rpx;
 }
 
 /* ———————————————————————————————————————————————————————————————————————————————————————————————————————— */
@@ -141,14 +141,14 @@ page {
 .title-location-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 5px;
-    padding-left: 10px;
+    gap: 20rpx;
+    margin-bottom: 10rpx;
+    padding-left: 20rpx;
 }
 
 /* 美团拼好饭标题样式 */
 .title {
-    font-size: 18px;
+    font-size: 36rpx;
     font-weight: bold;
     color: black;
 }
@@ -157,28 +157,28 @@ page {
 .location {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 14px;
+    gap: 10rpx;
+    font-size: 28rpx;
     color: black;
     cursor: pointer;
 }
 
 /* 定位图标大小 */
 .location-icon {
-    width: 16px;
-    height: 16px;
+    width: 32rpx;
+    height: 32rpx;
 }
 
 /* 头部副标题，横向排列，灰色字体 */
 .text {
     display: flex;
-    gap: 10px;
-    padding-left: 10px;
-    margin-top: 5px;
+    gap: 20rpx;
+    padding-left: 20rpx;
+    margin-top: 10rpx;
 }
 
 .text text {
-    font-size: 10px;
+    font-size: 20rpx;
     color: gray;
 }
 
@@ -187,6 +187,7 @@ page {
     border-radius: 80rpx;
     padding: 10rpx 40rpx;
     box-shadow: 2rpx 6rpx rgba(0, 0, 0, 0.1);
+    width: auto;
 }
 
 /* 搜索输入框样式 */
@@ -204,7 +205,7 @@ page {
 .neck-title-nav {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8rpx;
 }
 
 /* neck大标题 */
@@ -216,8 +217,8 @@ page {
 
 /* neck小标题 */
 .neck-title-small {
-    font-size: 11px;
-    padding-top: 3px;
+    font-size: 22rpx;
+    padding-top: 6rpx;
 }
 
 /* “更多”按钮，右对齐，灰色字体 */
@@ -225,15 +226,15 @@ page {
     font-size: 25rpx;
     color: grey;
     padding-left: 46%;
-    padding-top: 4px;
+    padding-top: 8rpx;
 }
 
 /* 商品列表横向滚动区，宽357px */
 .goods-list {
-    width: 357px;
+    width: 714rpx;
     display: flex;
     flex-direction: row;
-    padding: 4px;
+    padding: 8rpx;
 }
 
 /* 单个商品项，固定宽度，防止被压缩 */
@@ -243,7 +244,7 @@ page {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 0px;
+    margin-left: 0rpx;
 }
 
 /* 商品图片，圆角 */
@@ -305,10 +306,10 @@ page {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    padding: 5px 0;
+    padding: 10rpx 0;
     flex-shrink: 0;
-    gap: 22px;
-    padding-left: 8px;
+    gap: 44rpx;
+    padding-left: 16rpx;
     -ms-overflow-style: none;
     scrollbar-width: none;
     background-color: white;
@@ -325,9 +326,9 @@ page {
     flex-direction: row;
     height: auto;
     overflow-x: auto;
-    margin-top: 3px;
-    padding: 5px 8px;
-    gap: 7px;
+    margin-top: 6rpx;
+    padding: 10rpx 16rpx;
+    gap: 14rpx;
     background-color: white;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -344,14 +345,14 @@ page {
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    padding-top: 3px;
+    padding-top: 6rpx;
 }
 
 /* 导航图标，圆角，cover填充 */
 .nav-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 16rpx;
     object-fit: cover;
     display: block;
 
@@ -359,8 +360,8 @@ page {
 
 /* 导航文字，居中显示，单行省略 */
 .nav-text {
-    margin-top: 5px;
-    font-size: 12px;
+    margin-top: 10rpx;
+    font-size: 24rpx;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -371,11 +372,11 @@ page {
     width: auto;
     color: rgb(49, 49, 49);
     background-color: rgb(231, 231, 231);
-    border-radius: 5px;
-    font-size: 11px;
+    border-radius: 10rpx;
+    font-size: 22rpx;
     flex-shrink: 0;
-    border: 1px solid white;
-    padding: 4px 8px;
+    border: 2rpx solid white;
+    padding: 8rpx 16rpx;
 }
 
 /* -------------------------------------navigator---------------------------------------------------- */
@@ -389,7 +390,7 @@ page {
     overflow-x: auto;
     padding: 0 15rpx;
     box-sizing: border-box;
-    height: 189px;
+    height: 378rpx;
 }
 
 /* 单个商店拼单区域，inline-flex横向排列 */
@@ -399,14 +400,21 @@ page {
 
 /* 单个拼单项，白色背景，圆角阴影 */
 .group-buy-item {
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     border-radius: 10rpx;
     padding: 15rpx;
     box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
     margin-right: 15rpx;
     box-sizing: border-box;
-    width: 338px;
-    margin-top: 0px;
+    width: 676rpx;
+    margin-top: 0rpx;
+}
+
+.group-buy-item-head{
+    display: flex;
+    flex-direction: row;
+    height: 67rpx;
+    margin-bottom: 7rpx;
 }
 
 /* 店名商标图片，圆角，左浮动 */
@@ -416,14 +424,15 @@ page {
     border-radius: 10rpx;
     float: left;
     margin-right: 20rpx;
-    padding-top: 2px;
+    padding-top: 4rpx;
 }
 
 /* 店铺信息行，左右分布 */
 .shop-info {
-    margin-bottom: 17px;
+    margin-bottom: 34rpx;
     display: flex;
-    gap: 135px;
+    gap: 270rpx;
+    align-items: center;
 }
 
 /* 拼单店铺名，较大加粗 */
@@ -457,7 +466,7 @@ page {
 /* 商品图片，圆角 */
 .product-img {
     width: 100%;
-    height: 100px;
+    height: 200rpx;
     border-radius: 10rpx;
 }
 
@@ -471,7 +480,7 @@ page {
 /* 价格和销量，横向排列 */
 .product-price-sold {
     display: flex;
-    gap: 8px;
+    gap: 16rpx;
     align-items: center;
 }
 
@@ -490,18 +499,18 @@ page {
 /* 拼单按钮/已结束标签外层，圆角灰色背景 */
 .join-end {
     position: relative;
-    width: 80px;
-    height: 30px;
+    width: 160rpx;
+    height: 60rpx;
     border-radius: 20rpx;
-    border: 1px solid grey;
+    border: 2rpx solid grey;
     background-color: grey;
 }
 
 /* 拼单按钮，白色加粗 */
 .join-btn {
     position: absolute;
-    padding-left: 8px;
-    padding-top: 4px;
+    padding-left: 16rpx;
+    padding-top: 8rpx;
     font-weight: bold;
     color: white;
 }
@@ -509,8 +518,8 @@ page {
 /* 已结束标签，白色加粗 */
 .end-tag {
     position: absolute;
-    padding-left: 16px;
-    padding-top: 4px;
+    padding-left: 32rpx;
+    padding-top: 8rpx;
     font-weight: bold;
     color: white;
 }
@@ -601,12 +610,14 @@ page {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 6rpx 0rpx;
+    gap: 10rpx;
 }
 
 /* 年限/连锁标签，棕色字体 */
 .feet-tag-years,
 .feet-tag-chain {
-    padding: 4rpx 16rpx;
+    padding: 0rpx 0rpx;
     font-size: 22rpx;
     color: rgb(134, 100, 7);
 }
@@ -622,14 +633,14 @@ page {
     display: flex;
     flex-direction: row;
     gap: 16rpx;
-    padding: 4rpx 16rpx;
+    padding: 0rpx 0rpx;
 }
 
 /* 评论标签，黄色字体 */
 .feet-tag-comment {
     width: auto;
     font-size: 22rpx;
-    color: rgb(216, 166, 2);
+    color: rgb(219, 132, 0);
 }
 
 /* 底部价格区，横向排列，与图片的底部对齐 */
