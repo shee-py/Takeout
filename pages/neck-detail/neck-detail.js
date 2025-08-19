@@ -1,155 +1,148 @@
-// index.js
-const config = require('../../config/api.js');
 
 Page({
   data: {
-    // 拼单列表
-    groupBuyList: [
+    // 大牌整点抢数据
+    saleList: [
       {
-        shopName: '美味汉堡店',
-        distance: '500m',
-        time: '30分钟',
-        img: '/images/shops/1.jpg',
-        products: [
-          { name: '经典牛肉堡', price: '25', img: '/images/products/1.jpg', soldInfo: '已拼20份' },
-          { name: '香辣鸡腿堡', price: '22', img: '/images/products/2.jpg', soldInfo: '已拼35份' }
-        ],
-        isEnd: false,
+        logo: "/images/products/1.jpg",
+        name: "肯德基",
+        price: 19.9
       },
-      // 新增数据1
       {
-        shopName: '鲜果时光',
-        distance: '800m',
-        time: '25分钟',
-        img: '/images/shops/1.jpg',
-        products: [
-          { name: '草莓水果杯', price: '18', img: '/images/products/1.jpg', soldInfo: '已拼56份' },
-          { name: '蓝莓酸奶盒', price: '15', img: '/images/products/2.jpg', soldInfo: '已拼42份' }
-        ],
-        isEnd: false,
+        logo: "/images/products/1.jpg",
+        name: "星巴克",
+        price: 29.9
       },
-      // 新增数据2
       {
-        shopName: '川味小馆',
-        distance: '1.2km',
-        time: '40分钟',
-        img: '/images/shops/1.jpg',
-        products: [
-          { name: '宫保鸡丁', price: '32', img: '/images/products/1.jpg', soldInfo: '已拼18份' },
-          { name: '麻婆豆腐', price: '16', img: '/images/products/2.jpg', soldInfo: '已拼29份' }
-        ],
-        isEnd: true,  // 已结束状态
+        logo: "/images/products/1.jpg",
+        name: "麦当劳",
+        price: 15.9
+      },
+      {
+        logo: "/images/products/1.jpg",
+        name: "奈雪的茶",
+        price: 18.8
+      },
+      {
+        logo: "/images/products/1.jpg",
+        name: "必胜客",
+        price: 25.9
       }
     ],
-    location: null // 定位信息
-
-    , goodsList: [
+    
+    // 商品列表数据
+    goodsList: [
       {
-        img: '/images/products/1.jpg',
-        shopName: '蜜雪冰城',
-        goodsName: '冰鲜柠檬水',
-        subsidy: '6.6',
-        currentPrice: '1.9'
+        goodImg: "/images/products/1.jpg",
+        shopImg: "/images/products/2.jpg",
+        titleShopName:"肯德基",
+        shopName: "肯德基（鸡你太美店）",
+        goodName: "梁枫铖",
+        score: 4.8,
+        time: "30分钟",
+        distance: "1.2km",
+        directPrice: 29.9,
+        groupPrice: 19.9,
+        subsidy: 10.0
       },
       {
-        img: '/images/products/1.jpg',
-        shopName: '华莱士',
-        goodsName: '咔滋脆鸡内堡',
-        subsidy: '7.9',
-        currentPrice: '9.9'
+        goodImg: "/images/products/1.jpg",
+        shopImg: "/images/products/2.jpg",
+        titleShopName:"星巴克",
+        shopName: "星巴克（在看多一）",
+        goodName: "梁枫铖",
+        score: 4.7,
+        time: "25分钟",
+        distance: "0.8km",
+        directPrice: 42.0,
+        groupPrice: 29.9,
+        subsidy: 12.1
       },
       {
-        img: '/images/products/1.jpg',
-        shopName: '塔斯汀',
-        goodsName: '香辣鸡腿中国',
-        subsidy: '5',
-        currentPrice: '6.9'
+        goodImg: "/images/products/1.jpg",
+        shopImg: "/images/products/2.jpg",
+        titleShopName:"麦当劳",
+        shopName: "麦当劳（华农泰山店）",
+        goodName: "梁枫铖",
+        score: 4.6,
+        time: "35分钟",
+        distance: "1.5km",
+        directPrice: 25.0,
+        groupPrice: 15.9,
+        subsidy: 9.1
       },
       {
-        img: '/images/products/1.jpg',
-        shopName: '库迪咖啡',
-        goodsName: '橙C美式',
-        subsidy: '10.95',
-        currentPrice: '3.9'
-      }
-    ]
-
-    // 导航数据（实际可从接口获取）
-    , navList: [
-      { id: 1, icon: "/images/products/1.jpg", text: "推荐" },
-      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-      { id: 2, icon: "/images/products/1.jpg", text: "炒菜盖饭" },
-      // ... 其他导航项
-    ],
-    // 标签数据（实际可从接口获取）
-    tagList: [
-      { id: 1, tag: "爆品一口价" },
-      { id: 2, tag: "附近拼单" },
-      { id: 2, tag: "附近拼单" },
-      { id: 2, tag: "附近拼单" },
-      { id: 2, tag: "附近拼单" },
-      { id: 2, tag: "附近拼单" },
-      { id: 2, tag: "附近拼单" },
-      { id: 2, tag: "附近拼单" },
-      // ... 其他标签项
-    ],
-    // 新增feetList数据
-    feetList: [
-      {
-        img: '/images/products/1.jpg',
-        shopName: '星巴克',
-        address: '世贸天阶',
-        hasPaid: true,
-        goodsName: '星冰乐套餐梁枫铖梁枫铖梁枫铖梁枫铖梁枫铖梁枫铖我们喜欢你梁枫铖梁枫铖',
-        years: 5,
-        isChain: false,
-        time: '30分钟',
-        distance: '1.5km',
-        comment: ['好喝', '环境好'], // 示例评论，实际应根据需求随机抽取
-        price: '35.50',
-        remaining: 1, // 立即拼成
-        feet_totalGroupOrder: 120
+        goodImg: "/images/products/1.jpg",
+        shopImg: "/images/products/2.jpg",
+        titleShopName:"奈雪的茶",
+        shopName: "奈雪的茶（广海枫铖店）",
+        goodName: "梁枫铖",
+        score: 4.9,
+        time: "20分钟",
+        distance: "1.0km",
+        directPrice: 32.0,
+        groupPrice: 18.8,
+        subsidy: 13.2
       },
       {
-        img: '/images/products/2.jpg',
-        shopName: '海底捞',
-        address: '三里屯',
-        hasPaid: false,
-        goodsName: '单人火锅套餐',
-        years: 2,
-        isChain: true,
-        time: '45分钟',
-        distance: '2.0km',
-        comment: ['服务周到', '味道不错', '排队久'],
-        price: '88.00',
-        remaining: 5,
-        feet_totalGroupOrder: 80
-      },
-      {
-        img: '/images/products/1.jpg',
-        shopName: '麦当劳',
-        address: '大望路',
-        hasPaid: true,
-        goodsName: '巨无霸汉堡',
-        years: 3,
-        isChain: true,
-        time: '20分钟',
-        distance: '0.8km',
-        comment: ['出餐快', '味道好'],
-        price: '20.00',
-        remaining: 0, // 已结束
-        feet_totalGroupOrder: 200
+        goodImg: "/images/products/1.jpg",
+        shopImg: "/images/products/2.jpg",
+        titleShopName:"必胜客",
+        shopName: "必胜客（江秋三水店）",
+        goodName: "梁枫铖",
+        score: 4.5,
+        time: "40分钟",
+        distance: "2.0km",
+        directPrice: 59.0,
+        groupPrice: 25.9,
+        subsidy: 33.1
       }
     ]
   },
 
-  onLoad() {
-    // 页面加载时可以请求网络数据
-    this.processFeetList();
+  // 跳转到商品详情页
+  goToDetail(e) {
+    const index = e.currentTarget.dataset.index;
+    const goods = this.data.goodsList[index];
+    
+    // 编码特殊字符，防止跳转参数出错
+    wx.navigateTo({
+      url: `/pages/neck-detail/neck-detail?` +
+        `shopName=${encodeURIComponent(goods.shopName)}&` +
+        `score=${goods.score}&` +
+        `time=${encodeURIComponent(goods.time)}&` +
+        `distance=${encodeURIComponent(goods.distance)}&` +
+        `directPrice=${goods.directPrice}&` +
+        `groupPrice=${goods.groupPrice}&` +
+        `subsidy=${goods.subsidy}&` +
+        `goodImg=${encodeURIComponent(goods.goodImg)}`
+    });
   },
+
+  // 预约功能
+  reserve() {
+    wx.showToast({
+      title: "已成功预约明天10:00提醒",
+      icon: "success",
+      duration: 2000
+    });
+  },
+
+  
+  onLoad(options) {
+    // 接收传递的商品信息
+    if (options.shopName) {
+        this.setData({
+            'goodsInfo.shopName': decodeURIComponent(options.shopName)
+        });
+    }
+    if (options.goodsName) {
+        this.setData({
+            'goodsInfo.name': decodeURIComponent(options.productName)
+        });
+    }
+},
+  
 
 
   processFeetList() {
@@ -356,18 +349,5 @@ Page({
     });
   },
 
-  // 跳转到拼单详情页
-  goToGroupDetail(e) {
-    const { shopName, productName } = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: `/pages/group-detail/group-detail?shopName=${encodeURIComponent(shopName)}&productName=${encodeURIComponent(productName)}`
-    });
-  },
 
-  goToNeckDetail(e) {
-    const { shopName, goodsName } = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: `/pages/neck-detail/neck-detail?shopName=${encodeURIComponent(shopName)}&productName=${encodeURIComponent(goodsName)}`
-    });
-  }
 })

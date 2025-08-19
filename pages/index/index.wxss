@@ -83,6 +83,8 @@ page {
     flex-direction: column;
     width: 100%;
     background-color: rgb(247, 245, 245);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* 头部区域，绿色背景，内边距 */

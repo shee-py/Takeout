@@ -1,0 +1,196 @@
+css
+/* 全局样式重置，可根据项目需求调整 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* 容器样式，用于包裹整个页面内容 */
+.container {
+  padding: 0 16rpx;
+}
+
+/* 顶部 banner 区样式 */
+.top-banner {
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+  border-radius: 16rpx;
+}
+.banner-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-text {
+  position: absolute;
+  top: 40rpx;
+  left: 30rpx;
+  color: #fff;
+}
+.big-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.price {
+  font-size: 80rpx;
+  font-weight: bold;
+  color: #ffd9d9;
+  line-height: 1.2;
+}
+.slogan {
+  font-size: 32rpx;
+  margin-top: 10rpx;
+  line-height: 1.2;
+}
+
+/* 大牌整点抢区样式 */
+.flash-sale {
+  background-color: #fff;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  padding: 20rpx;
+}
+.sale-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tag {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #ff5f6d;
+}
+.sub-desc {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+}
+.status {
+  flex: 1;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+}
+.reserve-btn {
+  font-size: 24rpx;
+  color: #ff5f6d;
+  border: 1px solid #ff5f6d;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+}
+.sale-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 20rpx;
+}
+.sale-item {
+  margin-right: 20rpx;
+  text-align: center;
+  min-width: 120rpx;
+}
+.shop-logo {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.shop-name {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  display: block;
+}
+.shop-price {
+  font-size: 24rpx;
+  color: #ff5f6d;
+}
+
+/* 商品列表区样式 */
+.goods-section {
+  margin-top: 20rpx;
+}
+.goods-list {
+  display: flex;
+  background-color: #fafafa;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+.goods-cover {
+  width: 246rpx;
+  height: 246rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+.right-info {
+  display: flex;
+  flex-direction: column;
+}
+/* ------------------- */
+.goods-title {
+  display: flex;
+  align-items: center;
+  gap: 5rpx;
+}
+.title-shop-img {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 30%;
+}
+.title-shop-name {
+  font-size: 30rpx;
+  color: rgb(155, 106, 1);
+  font-weight: 600;
+}
+.l {
+  padding-left: 5rpx;
+  color: rgb(214, 214, 214);
+  size: rpx;
+}
+.title-good-name {
+  padding-left: 5rpx;
+  font-size: 28rpx;
+  font-weight: bolder;
+}
+/* ----------------------- */
+.goods-info {
+  flex: 1;
+}
+.shop-rating {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 16rpx;
+}
+.score {
+  color: #db8400;
+  font-size: 20rpx;
+  font-weight: bold;
+}
+.shop-name{
+  padding-left: 5rpx;
+}
+
+/* ----------------------- */
+.price-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.direct-price {
+  color: #ff5f6d;
+  font-size: 26rpx;
+}
+.group-price {
+  color: #ff5f6d;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.subsidy {
+  font-size: 22rpx;
+  color: #999;
+}

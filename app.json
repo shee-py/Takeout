@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/user/user",
     "pages/logs/logs",
-    "pages/group-detail/group-detail"
+    "pages/group-detail/group-detail",
+    "pages/neck-detail/neck-detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

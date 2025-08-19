@@ -23,17 +23,17 @@
         </view>
     </view>
 <!-------------------------- 爆品一口价 6.9元吃大餐 ------------------------------->
-    <view class="neck">
+    <view class="neck" >
         <!-- 标题 -->
-        <view class="neck-title-nav">
+        <view class="neck-title-nav" bindtap="goToNeckDetail" >
             <text class="neck-title-big">爆品一口价</text>
             <text class="neck-title-small">6.9元吃大牌</text>
             <navigator url="" class="more">更多></navigator>
         </view>
         <!-- 图片价格点餐区 -->
-        <view class="goods-list">
+        <view class="goods-list" >
             <!-- 获取goodsList -->
-            <view class="goods-item" wx:for="{{goodsList}}" wx:key="index">
+            <view class="goods-item" wx:for="{{goodsList}}" wx:key="index" bindtap="goToNeckDetail" data-shop-name="{{item.shopName}}" data-goods-name="{{item.goodsName}}">
                 <!-- 照骗 -->
                 <image class="goods-img" src="{{item.img}}" mode="aspectFill"></image>
                 <!-- 店名 -->

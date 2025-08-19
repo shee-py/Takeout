@@ -1,0 +1,57 @@
+<view class="container">
+  <!-- 顶部 banner 区 -->
+  <view class="top-banner">
+    <image class="banner-bg" src="/images/banner.png"></image>
+    <view class="banner-text">
+      <text class="big-title">爆品一口价</text>
+      <text class="price">6.9元</text>
+      <text class="slogan">品质外卖天天有</text>
+    </view>
+  </view>
+
+  <!-- 大牌整点抢区 -->
+  <view class="flash-sale">
+    <view class="sale-header">
+      <text class="tag">大牌整点抢</text>
+      <text class="sub-desc">2人成团</text>
+      <text class="status">今天已抢光 明天10:00再来吧</text>
+      <button class="reserve-btn">去预约</button>
+    </view>
+    <view class="sale-list">
+      <view class="sale-item" wx:for="{{saleList}}" wx:key="index">
+        <image class="shop-logo" src="{{item.logo}}"></image>
+        <text class="shop-name">{{item.name}}</text>
+        <text class="shop-price">¥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品列表区，点击触发跳转 -->
+  <view class="goods-section">
+    <view class="goods-list" wx:for="{{goodsList}}" wx:key="index">
+      <image class="goods-cover" src="{{item.goodImg}}"></image>
+      <view class="right-info">
+        <view class="goods-title">
+          <image class="title-shop-img" src="{{item.shopImg}}"></image>
+          <view class="title-shop-name">{{item.titleShopName}}</view>
+          <view class="l">|</view>
+          <view class="title-good-name">{{item.goodName}}</view>
+        </view>
+        <view class="goods-info">
+          <view class="shop-rating">
+            <text class="score">{{item.score}}分</text>
+            <text class="shop-name">{{item.shopName}}</text>
+            <text class="time">{{item.time}}</text>
+            <text class="distance">{{item.distance}}</text>
+          </view>
+          
+          <view class="price-bar">
+            <text class="direct-price">¥{{item.directPrice}} 直接买</text>
+            <text class="group-price">¥{{item.groupPrice}} 2人团</text>
+            <text class="subsidy">已补¥{{item.subsidy}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
